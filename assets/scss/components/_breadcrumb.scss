@@ -1,0 +1,81 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  3.2 Breadcrumb css
+/*----------------------------------------*/
+
+// Breadcrumb style
+.breadbcrumb-area{
+  padding-top: 220px;
+  padding-bottom: 120px;
+  background: radial-gradient(63.8% 63.8% at 50% 50%, rgba(9, 176, 233, 0.4) 0%, rgba(0, 36, 21, 0.1) 100%);
+  @media #{$xs}{
+    padding-top: 190px;
+  }
+  @media #{$sm}{
+    padding-top: 200px;
+  }
+}
+.breadcrumb-wrapper{
+  text-align: center;
+}
+.breadcrumb-title{
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #09B0E7 0%, #18DE8D 100%);
+    background-clip: border-box;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-bottom: 5px;
+  color: var(--bd-white);
+  @media #{$sm}{
+    font-size: 40px;
+  }
+  @media #{$xl}{
+    font-size: 50px;
+  }
+}
+.breadcrumb-list{
+  span{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+    position: relative;
+    color: var(--bd-white);
+    @media #{$sm}{
+      font-size: 18px;
+    }
+    @media #{$md}{
+      font-size: 20px;
+    }
+    &:not(:last-child) {
+      padding-right: 15px;
+      &::before {
+        position: absolute;
+        content: "/";
+        inset-inline-end: 6px;
+        color: var(--bd-white);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .active{
+    background: linear-gradient(90deg, #09B0E7 0%, #18DE8D 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+.contact-breadcrumb{
+  padding-bottom: 330px;
+  @media #{$sm}{
+    padding-bottom: 230px;
+  }
+  @media #{$xs}{
+    padding-bottom: 200px;
+  }
+}

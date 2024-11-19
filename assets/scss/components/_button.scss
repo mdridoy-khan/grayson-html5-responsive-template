@@ -1,0 +1,157 @@
+@use '../utils' as *;
+
+/*----------------------------------------
+   3.3  button css
+-----------------------------------------*/
+// Gradient button
+.theme_btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bd-white);
+  padding: 12px 38px;
+  @include inline-flex();
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 27px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  text-transform: capitalize;
+  z-index: 5;
+  background-position: 100% 100%;
+  background-size: 300% 100%;
+  background-image: linear-gradient(90deg, #19E089,   #09AFEA, #09AFEA, #19E089);
+  @media #{$xs}{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 35px;
+  }
+  span {
+      i {
+          position: relative;
+          top: 1px;
+      }
+  }
+
+  &:hover {
+      color: var(--bd-white);
+      background-position: 0 100%;
+  }
+}
+
+.primary_btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--bd-white);
+  padding: 12px 38px;
+  @include inline-flex();
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 27px;
+  position: relative;
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  text-transform: capitalize;
+  z-index: 5;
+  border: 1px solid #19E089;
+  z-index: 2;
+  overflow: hidden;
+  @media #{$xs}{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 35px;
+  }
+  &::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    content: "";
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    background: linear-gradient(90deg, #09AFE9 0%, #18DF8B 100%);;
+  }
+  &:hover {
+    border-color: transparent;
+     &::before{
+      opacity: 1;
+      visibility: visible;
+     }
+  }
+}
+.circle-btn{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-position: 100% 100%;
+  background-size: 300% 100%;
+  background-image: linear-gradient(90deg, #19E089,   #09AFEA, #09AFEA, #19E089);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  i{
+    transition: .3s;
+  }
+  &:hover {
+    color: var(--bd-white);
+    background-position: 0 100%;
+
+    i{
+      rotate: (-45deg);
+    }
+}
+}
+
+.btn_transparent {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 35px;
+  color: var(--bd-white);
+  @include inline-flex();
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  border-radius: 22px;
+  position: relative;
+  text-transform: capitalize;
+  z-index: 5;
+  border: 1px solid #2F3735;
+  overflow: hidden;
+  @media #{$xs}{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 9px 15px;
+  }
+  &::before{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(89.92deg, #09B3E2 1.76%, #18DB90 99.93%);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &:hover {
+      color: var(--bd-white);
+      border-color: transparent;
+    &::before{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

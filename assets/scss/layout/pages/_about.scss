@@ -1,0 +1,110 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.1 About css
+/*----------------------------------------*/
+
+// resume-css
+.education-main-wrapper{
+    margin-bottom: 80px;
+    @media #{$lg} {
+		margin-bottom: 100px;
+	}
+    @media #{$xl}{
+        margin-bottom: 140px;
+    }
+}
+.resume-item{
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    position: relative;
+    border-bottom: 1px solid var(--bd-border-primary);
+    display: flex;
+    @media #{$md}{
+        padding: 25px 10px;
+        flex-direction: inherit;
+    }
+    @media #{$lg}{
+        padding: 38px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: inherit;
+    }
+}
+.resume-item.active{
+    &::before{
+        height: 100%;
+    }
+}
+.resume-left{
+    width: 100%;
+    @media #{$md}{
+        width: calc(50% - 10px);
+    }
+    @media #{$lg}{
+        width: calc(30% - 10px);
+    }
+}
+.resume-mid{
+   width: 100%;
+    @media #{$md}{
+        width: calc(120% - 10px);
+    }
+    @media #{$lg}{
+        width: calc(60% - 10px);
+    }
+    @media #{$xl}{
+        width: calc(55% - 10px);
+    }
+
+    p{
+        margin-bottom: 0;
+        font-size: 15px;
+        color: #ffffff;
+        @media #{$xs}{
+            font-size: 14px;
+        }
+        span{
+            color: var(--bd-white);
+        }
+       }
+}
+.resume-right{
+   p{
+    margin-bottom: 0;
+    @media #{$md}{
+        font-size: 15px;
+    }
+   }
+}
+.education-title{
+    font-size: 20px;
+    margin-bottom: 5px;
+    @media #{$sm}{
+        font-size: 22px;
+    }
+    @media #{$md}{
+        font-size: 20px;
+    }
+    @media #{$lg,$xl}{
+        font-size: 25px;
+    }
+    @media #{$xxl}{
+        font-size: 30px;
+    }
+}
+.resume-widget .active-bg {
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	position: absolute;
+	z-index: 1;
+	background: #8750f7;
+    background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+    z-index: -1;
+}

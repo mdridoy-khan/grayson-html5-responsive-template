@@ -1,0 +1,128 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Footer Style 1
+/*----------------------------------------*/
+.footer-area{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    background: linear-gradient(0deg, rgba(10, 180, 224, 0.05) 0%, rgba(25, 223, 139, 0.05) 100%);
+    @media #{$sm} {
+        padding-top: 100px;
+	}
+}
+.footer-logo{
+    margin-bottom: 30px;
+}
+.footer-menu{
+    margin-bottom: 25px;
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 15px;
+        align-items: center;
+        justify-content: center;
+        @media #{$sm}{
+            flex-wrap: nowrap;
+            gap: 40px;
+        }
+        li{
+            a{
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--bd-white);
+                padding: 10px 0px;
+                @media #{$sm}{
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                &:hover{
+                    color: var(--bd-primary);
+                }
+            }
+        }
+    }
+}
+.footer-social{
+    margin-bottom: 30px;
+    ul{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        li{
+            a {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--bd-white);
+                position: relative;
+                overflow: hidden;
+                background: #202A2B;
+                z-index: 2;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+                    z-index: -1;
+                    visibility: hidden;
+                    transition: .3s;
+                    opacity: 0; 
+                    border-radius: 50%;
+                }
+                &:hover{
+                   &::before {
+                    opacity: 1; 
+                    visibility: visible;
+                }
+                
+                }
+            }
+        }
+    }
+}
+.copyright-text{
+    text-transform: capitalize;
+    background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; 
+    p{
+        margin-bottom: 0;
+    }
+    a{
+        position: relative;
+        text-transform: capitalize;
+        background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        &:hover{
+            &::before{
+                width: 100%;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 2px;
+            border-radius: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+            transition:  0.3s ease;
+        }
+    }
+}
+.footer-style-two{
+    background: var(--bd-black);
+}

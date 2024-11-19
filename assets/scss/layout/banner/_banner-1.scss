@@ -1,0 +1,185 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.1 banner Style 1
+/*----------------------------------------*/
+.banner-area{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+	padding-top: 150px;
+	@media #{$lg}{
+		padding-top: 220px;
+	}
+}
+.banner-title{
+    font-size: 30px;
+    color: var(--bd-white);
+	@media #{$sm}{
+		font-size: 45px;
+	}
+	@media #{$md}{
+		font-size: 48px;
+	}
+	@media #{$xl}{
+		font-size: 58px;
+	}
+	@media #{$xxl}{
+		font-size: 64px;
+	}
+}
+.banner-icon{
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #2F4345;
+    display: inline-block;
+	margin-bottom: 20px;
+	img{
+		transform-origin: bottom center;
+     	animation: move 1.8s ease-in-out 0s infinite;
+	}
+}
+.banner-content{
+	@media #{$xs,$sm,$md}{
+		padding-bottom: 50px;
+	}
+    p{
+        font-size: 18px;
+        max-width: 550px;
+		line-height: 1.65;
+		margin-bottom: 50px;
+		@media #{$xs}{
+			font-size: 16px;
+			margin-bottom: 40px;
+		}
+    }
+	span{
+		margin-bottom: 20px;
+		font-size: 30px;
+		font-weight: 600;
+		@media #{$sm}{
+			font-size: 45px;
+		}
+		@media #{$md}{
+			font-size: 48px;
+		}
+		@media #{$xl}{
+			font-size: 58px;
+		}
+		@media #{$xxl}{
+			font-size: 64px;
+		}
+		b{
+			background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			color: transparent;
+			line-height: 1.1;
+			&::-moz-selection, &::selection {
+				background: transparent;
+			}
+		}
+    }
+}
+.btn_wrap{
+    display: flex;
+    gap: 20px;
+	@media #{$xs}{
+		flex-wrap: wrap;
+	}
+}
+.banner-thumb{
+	text-align: center;
+	@media #{$lg}{
+		text-align: end;
+	}
+}
+
+// Clip Type Animation - Start
+.cd-words-wrapper {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	b {
+		display: inline-block;
+		position: absolute;
+		white-space: nowrap;
+		left: 0;
+		top: 0;
+		font-weight: inherit;
+		&.is-visible {
+			position: relative;
+		}
+	}
+}
+.no-js {
+	.cd-words-wrapper {
+		b {
+			opacity: 0;
+			&.is-visible {
+				opacity: 1;
+			}
+		}
+	}
+}
+.cd-headline {
+	&.clip {
+		span {
+			display: inline-block;
+			transition: none;
+		}
+		.cd-words-wrapper {
+			overflow: hidden;
+			vertical-align: top;
+			line-height: 1;
+			&::after {
+				top: 0;
+				right: 0;
+				width: 1px;
+				content: "";
+				height: 100%;
+				position: absolute;
+				background-color: var(--bd-primary);
+			}
+		}
+		b {
+			opacity: 0;
+			&.is-visible {
+				opacity: 1;
+			}
+		}
+	}
+}
+// Clip Type Animation - End
+
+
+.brand-wrapper{
+    padding-bottom: 75px;
+	padding-top: 165px;
+	@media #{$md}{
+		padding-top: 100px;
+	}
+	@media #{$xs,$sm}{
+		padding-top: 90px;
+	}
+}
+.brand-title{
+    position: relative;
+    &::before{
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 2px;
+        content: "";
+        height: 44px;
+        position: absolute;
+        background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+    }
+}
+.brand-title{
+    color: var(--bd-white);
+    padding-left: 25px;
+}
+
+
+

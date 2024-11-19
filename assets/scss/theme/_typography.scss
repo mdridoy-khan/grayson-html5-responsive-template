@@ -1,0 +1,96 @@
+@use '../utils' as *;
+/*---------------------------------
+    Typography css start 
+---------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-size: 16px;
+	font-weight: normal;
+	background: var(--bd-black);
+	color: var(--bd-white);
+	line-height: 1.5;
+	font-family: var(--bd-ff-body);
+}
+p {
+	font-size: 16px;
+	font-weight: var(--bd-fw-regular);
+	color: var(--bd-white);
+	margin-bottom: 30px;
+	line-height: 1.65;
+	@media #{$xs}{
+		font-size: 14px;
+	}
+  }
+  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--bd-ff-body);
+	color: var(--bd-white);
+	margin-top: 0px;
+	line-height: 1.2;
+	margin-bottom: 0;
+	font-weight: var(--bd-fw-sbold);
+	word-break: break-word;
+}
+
+h1 {
+	font-size: var(--bd-fs-h1);
+
+	@media #{$lg} {
+		font-size: 25px;
+	}
+
+	@media #{$sm,$xs} {
+		font-size: 24px;
+	}
+
+	&.large {
+		font-size: 50px;
+	}
+}
+
+h2 {
+	font-size: var(--bd-fs-h2);
+	@media #{$lg} {
+		font-size: 30px;
+	}
+
+	@media #{$sm,$xs} {
+		font-size: 24px;
+	}
+}
+
+h3 {
+	font-size: var(--bd-fs-h3);
+}
+
+h4 {
+	font-size: var(--bd-fs-h4);
+}
+
+h5 {
+	font-size: var(--bd-fs-h5);
+
+	&.small {
+		font-size: 20px;
+	}
+}
+
+h6 {
+	font-size: var(--bd-fs-h6);
+}

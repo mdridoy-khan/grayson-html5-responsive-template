@@ -1,0 +1,222 @@
+@use '../utils' as *;
+
+/*---------------------------------
+    1.1 Common Classes
+---------------------------------*/
+//>>>>> Mouse Cursor Start <<<<<//
+.mouse-cursor {
+	position: fixed;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	border-radius: 50%;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	visibility: hidden;
+}
+.cursor-inner {
+	width: 6px;
+	height: 6px;
+	z-index: 10000001;
+	background-color: var(--bd-primary);
+	-webkit-transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	-o-transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	&.cursor-hover {
+		margin-left: -35px;
+		margin-top: -35px;
+		width: 70px;
+		height: 70px;
+		background-color: var(--bd-primary);
+		opacity: 0.3;
+	}
+}
+
+.cursor-outer {
+	margin-left: -12px;
+	margin-top: -12px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid var(--bd-primary);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 10000000;
+	opacity: 0.5;
+	-webkit-transition: all 0.08s ease-out;
+	-o-transition: all 0.08s ease-out;
+	transition: all 0.08s ease-out;
+
+	&.cursor-hover {
+		opacity: 0;
+	}
+}
+
+
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.f-left {
+	float: left
+}
+.f-right {
+	float: right
+}
+.z-index-1{
+	z-index: 1;
+}
+.z-index-11{
+	z-index: 11;
+}
+.opacity-05 {
+	opacity: 0.5;
+}
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+.include-bg{
+	@include background();
+}
+.hr-1 {
+	border-top: 1px solid rgb(232, 232, 232);
+}
+.x-clip {
+	overflow-x: clip;
+}
+.o-xs {
+	@media #{$xs} {
+		overflow-x: hidden;
+	}
+}
+.color-white{
+	color: var(--bd-white)
+}
+.valign {
+	@include flexbox();
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+}
+/*----------------------------------------
+    Body background 
+-----------------------------------------*/
+.bg-white{
+background: var(--bd-white);
+}
+.clr-white{
+color: var(--bd-white);
+}
+
+
+// spaching css
+
+.section-space {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	@media #{$lg} {
+		padding-top: 100px;
+	    padding-bottom: 100px;
+	}
+	@media #{$xl} {
+		padding-top: 140px;
+	    padding-bottom: 140px;
+	}
+
+}
+.section-space-top {
+	padding-top: 80px;
+	@media #{$lg} {
+		padding-top: 100px;
+	}
+	@media #{$xl} {
+		padding-top: 140px;
+	}
+}
+.section-space-bottom {
+	padding-bottom: 70px;
+	@media #{$lg} {
+		padding-bottom: 100px;
+	}
+	@media #{$xl} {
+		padding-bottom: 140px;
+	}
+}
+.mb-0{
+	margin-bottom: 0 !important;
+}
+/*--
+    - Color
+-----------------------------------------*/
+.color-primary{
+	color: var(--bd-primary);
+}
+.color-secondary{
+	color: var(--bd-secondary);
+}
+
+/*--
+    - Margin & Padding
+-----------------------------------------*/
+/*-- Margin Top --*/
+@for $i from 1 through 40 {
+    .mt-#{5 * $i}{margin-top: 5px * $i;}
+}
+/*-- Margin Bottom --*/
+@for $i from 1 through 40 {
+    .mb-#{5 * $i}{margin-bottom: 5px *$i;}
+}
+/*-- Margin Left --*/
+@for $i from 1 through 40 {
+    .ml-#{5 * $i}{margin-left: 5px * $i;}
+}
+
+/*-- Margin Right --*/
+@for $i from 1 through 40 {
+    .mr-#{5 * $i}{margin-right: 5px *$i;}
+}
+
+/*-- Padding Top --*/
+@for $i from 1 through 40 {
+    .pt-#{5 * $i}{padding-top: 5px *$i;}
+}
+
+/*-- Padding Bottom --*/
+@for $i from 1 through 40 {
+    .pb-#{5 * $i}{padding-bottom: 5px *$i;}
+}
+
+/*-- Padding Left --*/
+@for $i from 1 through 40 {
+    .pl-#{5 * $i}{padding-left: 5px *$i;}
+}
+
+/*-- Padding Right --*/
+@for $i from 1 through 40 {
+    .pr-#{5 * $i}{padding-right: 5px *$i;}
+}

@@ -1,0 +1,32 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  1.4 Section Title   css
+/*----------------------------------------*/
+.sub-title{
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 18px;
+  padding: 8px 24px;
+  margin-bottom: 15px;
+  display: inline-block;
+  background-color: rgba($color: #2F4345, $alpha: .5);
+}
+.section-title{
+    font-size: 28px;
+    background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: table;
+    margin: 0 auto 15px;
+    @media #{$sm}{
+        font-size: 40px;
+    }
+    @media #{$xl}{
+        font-size: 48px;
+    }
+    &::-moz-selection,&::selection {
+        background: transparent;
+    }
+}

@@ -1,0 +1,90 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  3.4 Offcanvas css
+/*----------------------------------------*/
+// Offcanvas style
+.offcanvas-info{
+    background: var(--bd-black);
+    height: 100%;
+    position: fixed;
+    padding: 30px 30px;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    -webkit-transform: translateX(calc(100% + 80px));
+    -moz-transform: translateX(calc(100% + 80px));
+    -ms-transform: translateX(calc(100% + 80px));
+    -o-transform: translateX(calc(100% + 80px));
+    transform: translateX(calc(100% + 80px));
+    -webkit-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    -moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    z-index: 999;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scrollbar-color: var(--bd-primary) #000000;
+    @media #{$xxs}{
+        padding: 20px;
+        width: 100%;
+    }
+}
+.offcanvas-info.info_open{
+    transform: translateX(0);
+    opacity: 1;
+}
+.offcanvas_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    z-index: 555;
+    background-color: var(--bd-black);
+    opacity: .8;
+    transition: width 0.5s linear;
+}
+.offcanvas_overlay.overlayopen{
+    width: 100%;
+}
+.offcanvas-top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    align-items: center;
+    border-bottom: 1px solid var(--bd-border-primary);
+}
+.offcanvas-logo{
+    width: 180px;
+    @media #{$xs}{
+        max-width: 130px;
+    }
+}
+.offcanvas-icon{
+    button{
+        font-size: 16px;
+        color: var(--bd-white);
+        height: 40px;
+        width: 40px;
+        background: linear-gradient(90deg, var(--bd-secondary) 0%, var(--bd-primary) 100%);
+        border-radius: 50%;
+        i{
+            transition: .5s;
+        }
+        &:hover{
+            i{
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+.follow-link{
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: var(--bd-white);
+    @media #{$xs}{
+        font-size: 18px;
+     }
+}
